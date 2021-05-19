@@ -1,4 +1,4 @@
-import 'package:car_wash/Screens/Welcome/welcome_screen.dart';
+import 'package:car_wash/Screens/SplashScreen/splash_screen.dart';
 import 'package:car_wash/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: WelcomeScreen(),
+      home: SplashScreenn(),
     );
   }
 }

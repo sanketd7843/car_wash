@@ -17,15 +17,6 @@ class _HomeScreenState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: new AppBar(
-        backgroundColor: Colors.white,
-        title: new Center(
-            child: new Text(
-          "History",
-          textAlign: TextAlign.center,
-          style: TextStyle(color: Colors.grey.shade700),
-        )),
-      ),
       body: SafeArea(
         child: Container(
           margin: EdgeInsets.only(top: 8),

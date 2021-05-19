@@ -1,3 +1,8 @@
+import 'package:car_wash/Screens/AppointmentScreen/appointment_screen.dart';
+import 'package:car_wash/Screens/DetailScreen/detail_screen.dart';
+import 'package:car_wash/Screens/SignupSignin/signupsignin_screen.dart';
+import 'package:car_wash/Screens/SplashScreen/splash_screen.dart';
+import 'package:car_wash/Screens/WalletScreen/WalletScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:car_wash/Screens/Login/login_screen.dart';
 import 'package:car_wash/Screens/Signup/signup_screen.dart';
@@ -16,7 +21,7 @@ class Body extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "Car Washing",
+              "Mi Carwa",
               style: TextStyle(
                 fontSize: 23,
                 color: Colors.grey.shade700,
@@ -25,7 +30,7 @@ class Body extends StatelessWidget {
             ),
             SizedBox(height: size.height * 0.05),
             Image.asset(
-              "assets/images/splash.png",
+              "assets/images/login.png",
               height: size.height * 0.40,
             ),
             SizedBox(height: size.height * 0.05),
@@ -37,7 +42,7 @@ class Body extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return LoginScreen();
+                      return SignUpSignup();
                     },
                   ),
                 );

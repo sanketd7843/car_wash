@@ -79,10 +79,6 @@ class _MyAppState extends State<MyApp> {
                                   Offset(0, 3), // changes position of shadow
                             ),
                           ],
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/googlenew.png'),
-                            fit: BoxFit.fill,
-                          ),
                         ),
                       ),
                     ),
@@ -100,16 +96,6 @@ class _MyAppState extends State<MyApp> {
                           style: TextStyle(
                               fontSize: 28, fontWeight: FontWeight.w700),
                         ),
-                        // Padding(
-                        //   padding: const EdgeInsets.only(top: 3.0),
-                        //   child: Text(
-                        //     'Alex Car Washing',
-                        //     style: TextStyle(
-                        //         fontSize: 17,
-                        //         color: Colors.grey,
-                        //         fontWeight: FontWeight.normal),
-                        //   ),
-                        // ),
                         Padding(
                           padding: const EdgeInsets.only(top: 1.0),
                           child: RatingBarIndicator(
@@ -221,7 +207,33 @@ class _MyAppState extends State<MyApp> {
                                 child: Center(
                                   child: IconButton(
                                     icon: Icon(
-                                      Icons.shopping_cart,
+                                      Icons.phone,
+                                      color: Colors.grey.shade400,
+                                    ),
+                                    onPressed: () => debugPrint('hello'),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              width: 10,
+                            ),
+                            Flexible(
+                              fit: FlexFit.tight,
+                              flex: 1,
+                              child: Container(
+                                width: 60,
+                                height: 60,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey.shade200,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
+                                child: Center(
+                                  child: IconButton(
+                                    icon: Icon(
+                                      Icons.location_on,
                                       color: Colors.grey.shade400,
                                     ),
                                     onPressed: () => debugPrint('hello'),
@@ -247,7 +259,7 @@ class _MyAppState extends State<MyApp> {
                                 child: Center(
                                   child: FlatButton(
                                     child: Text(
-                                      'Add To Cart',
+                                      'Book Now',
                                       style: TextStyle(color: Colors.white),
                                     ),
                                     onPressed: () => debugPrint('hello'),

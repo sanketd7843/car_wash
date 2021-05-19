@@ -28,7 +28,7 @@ class Body extends StatelessWidget {
               ),
             ),
             Image.asset(
-              "assets/images/singup.png",
+              "assets/images/signupgreen.png",
               height: size.height * 0.30,
             ),
             RoundedInputField(

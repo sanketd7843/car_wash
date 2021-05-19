@@ -1,12 +1,10 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:car_wash/Screens/AppointmentScreen/appointment_screen.dart';
 import 'package:car_wash/Screens/HistoryScreen/history_screen.dart';
-import 'package:car_wash/Screens/Login/login_screen.dart';
 import 'package:car_wash/Screens/MapScreen/map_screen.dart';
 import 'package:car_wash/Screens/NearbyScreen/nearby_screen.dart';
+import 'package:car_wash/Screens/OrdersScreen/orders_screen.dart';
 import 'package:car_wash/Screens/Profile/profile_screen.dart';
-import 'package:car_wash/Screens/ReferAndEarn/refer_and_earn.dart';
-import 'package:car_wash/Screens/Welcome/welcome_screen.dart';
 import 'package:car_wash/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +33,7 @@ class _MyPackageState extends State<MyPackage> {
       child: NearbyScreen(),
     ),
     Container(
-      child: MapScreen(),
+      child: OrdersScreen(),
     ),
     Container(
       child: HistoryScreen(),
@@ -70,12 +68,6 @@ class _MyPackageState extends State<MyPackage> {
                 title: Text('Home'),
                 textAlign: TextAlign.center,
                 activeColor: kPrimaryColor,
-                inactiveColor: Colors.black),
-            BottomNavyBarItem(
-                icon: Icon(Icons.map),
-                title: Text('Map'),
-                activeColor: kPrimaryColor,
-                textAlign: TextAlign.center,
                 inactiveColor: Colors.black),
             BottomNavyBarItem(
                 icon: Icon(Icons.history),

@@ -1,3 +1,6 @@
+import 'package:car_wash/constants.dart';
+import 'package:car_wash/model/history_model.dart';
+import 'package:car_wash/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:car_wash/Screens/WalletScreen/theme/light_color.dart';
 import 'package:car_wash/Screens/WalletScreen/widgets/balance_card.dart';
@@ -12,68 +15,135 @@ class WalletScreen extends StatefulWidget {
 }
 
 class _WalletScreenState extends State<WalletScreen> {
-  Widget _appBar() {
-    return Row(
-      children: <Widget>[
-        Image(
-          image: AssetImage('assets/images/user.png'),
-        ),
-        SizedBox(width: 15),
-        TitleText(text: "Hello,"),
-        Text(' Alex,',
-            style: GoogleFonts.muli(
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-                color: LightColor.navyBlue2)),
-        Expanded(
-          child: SizedBox(),
-        ),
-        Icon(
-          Icons.arrow_back_ios,
-          color: Theme.of(context).iconTheme.color,
-        )
-      ],
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-            child: SingleChildScrollView(
-      child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+      appBar: new AppBar(
+        backgroundColor: Colors.white,
+        title: new Center(
+            child: new Text(
+          "Wallet",
+          textAlign: TextAlign.center,
+          style: TextStyle(color: Colors.grey.shade700),
+        )),
+      ),
+      body: SafeArea(
+        child: Container(
+          margin: EdgeInsets.only(top: 8),
+          child: ListView(
+            physics: ClampingScrollPhysics(),
             children: <Widget>[
-              SizedBox(height: 35),
-              _appBar(),
+              // Custom AppBar
+              // Card Section
               SizedBox(
-                height: 40,
+                height: 15,
               ),
-              TitleText(text: "My wallet"),
-              SizedBox(
-                height: 20,
-              ),
+
               BalanceCard(),
-              SizedBox(
-                height: 50,
-              ),
-              Center(
-                child: Container(
-                  height: 180.0,
-                  width: 270.0,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/walletimage.png'),
-                      fit: BoxFit.fill,
-                    ),
-                    // shape: BoxShape.circle,
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(28.0, 48.0, 28.0, 0.0),
+                child: Text(
+                  "Past 3 Transactions",
+                  style: TextStyle(
+                    color: kPrimaryColor,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
+              ),
+
+              ListView.builder(
+                itemCount: transactions.length,
+                padding: EdgeInsets.only(left: 16, right: 16, top: 20),
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () => {},
+                    child: Container(
+                      height: 106,
+                      margin: EdgeInsets.only(bottom: 13),
+                      padding: EdgeInsets.only(
+                          left: 24, top: 12, bottom: 12, right: 22),
+                      decoration: BoxDecoration(
+                        color: kWhiteColor,
+                        borderRadius: BorderRadius.circular(15),
+                        boxShadow: [
+                          BoxShadow(
+                            color: kTenBlackColor,
+                            blurRadius: 10,
+                            spreadRadius: 5,
+                            offset: Offset(8.0, 8.0),
+                          )
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                    1.0, 1.0, 1.0, 4.0),
+                                child: Text(
+                                  transactions[index].date,
+                                  style: GoogleFonts.inter(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w400,
+                                      color: kGreyColor),
+                                ),
+                              ),
+                              Text(
+                                transactions[index].photo,
+                                style: GoogleFonts.inter(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                    color: kGreyColor),
+                              )
+                            ],
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                    1.0, 1.0, 1.0, 4.0),
+                                child: Text(
+                                  transactions[index].name,
+                                  style: GoogleFonts.inter(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w700,
+                                      color: kBlackColor),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                transactions[index].amount,
+                                style: GoogleFonts.inter(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w700,
+                                    color: kPrimaryColor),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  );
+                },
               )
             ],
-          )),
-    )));
+          ),
+        ),
+      ),
+    );
   }
 }

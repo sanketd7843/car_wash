@@ -30,7 +30,7 @@ class Body extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Image.asset(
-                "assets/images/login.png",
+                "assets/images/splash.png",
                 height: size.height * 0.40,
               ),
             ),

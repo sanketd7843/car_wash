@@ -51,14 +51,22 @@ class _HomeScreenState extends State<Body> {
                       padding: EdgeInsets.only(
                           left: 24, top: 12, bottom: 12, right: 22),
                       decoration: BoxDecoration(
-                        color: kWhiteColor,
-                        borderRadius: BorderRadius.circular(15),
+                        gradient: new LinearGradient(
+                            colors: [
+                              kMainPageGradientLight,
+                              kMainPageGradientDark,
+                            ],
+                            begin: const FractionalOffset(0.0, 1.0),
+                            end: const FractionalOffset(1.0, 1.0),
+                            stops: [0.0, 1.0],
+                            tileMode: TileMode.clamp),
+                        borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
                             color: kTenBlackColor,
-                            blurRadius: 10,
-                            spreadRadius: 5,
-                            offset: Offset(8.0, 8.0),
+                            blurRadius: 15,
+                            spreadRadius: 2,
+                            offset: Offset(0.0, 8.0),
                           )
                         ],
                       ),
@@ -77,7 +85,7 @@ class _HomeScreenState extends State<Body> {
                                   style: GoogleFonts.inter(
                                       fontSize: 18,
                                       fontWeight: FontWeight.w400,
-                                      color: kGreyColor),
+                                      color: kWhiteColor),
                                 ),
                               ),
                               Text(
@@ -85,7 +93,7 @@ class _HomeScreenState extends State<Body> {
                                 style: GoogleFonts.inter(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w400,
-                                    color: kGreyColor),
+                                    color: kWhiteColor),
                               )
                             ],
                           ),
@@ -101,7 +109,7 @@ class _HomeScreenState extends State<Body> {
                                   style: GoogleFonts.inter(
                                       fontSize: 17,
                                       fontWeight: FontWeight.w700,
-                                      color: kBlackColor),
+                                      color: kWhiteColor),
                                 ),
                               ),
                             ],
@@ -115,7 +123,7 @@ class _HomeScreenState extends State<Body> {
                                 style: GoogleFonts.inter(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w700,
-                                    color: kBlueColor),
+                                    color: kWhiteColor),
                               ),
                             ],
                           )
