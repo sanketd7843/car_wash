@@ -1,7 +1,10 @@
 import 'package:car_wash/view/AppointmentScreen/appointment_screen.dart';
 import 'package:car_wash/view/HistoryScreen/history_screen.dart';
 import 'package:car_wash/view/NearbyScreen/nearby_screen.dart';
+import 'package:car_wash/view/OrderAcceptDenyScreen/order_acceptdeny_screen.dart';
 import 'package:car_wash/view/OrdersScreen/orders_screen.dart';
+import 'package:car_wash/view/PaymentDoneScreen/PaymentDoneScreen.dart';
+import 'package:car_wash/view/PaymentModeScreen/PaymentModeScreen.dart';
 import 'package:car_wash/view/Profile/profile_screen.dart';
 import 'package:car_wash/constants.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +33,7 @@ class _MyPackageState extends State<MyPackage> {
   final List<Widget> screens = [
     NearbyScreen(),
     OrdersScreen(),
-    HistoryScreen(),
+    OrderAcceptDenyScreen(),
     ProfileScreen(),
   ]; // to store nested tabs
   final PageStorageBucket bucket = PageStorageBucket();
@@ -125,7 +128,7 @@ class _MyPackageState extends State<MyPackage> {
                     onPressed: () {
                       setState(() {
                         currentScreen =
-                            AppointmentScreen(); // if user taps on this dashboard tab will be active
+                            PaymentModeScreen(); // if user taps on this dashboard tab will be active
                         currentTab = 2;
                       });
                     },

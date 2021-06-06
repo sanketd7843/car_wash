@@ -28,6 +28,7 @@ class _SignUpState extends State<SignUp> {
   final FocusNode focusFirstName = FocusNode();
   final FocusNode focusMiddleName = FocusNode();
   final FocusNode focusLastName = FocusNode();
+  final FocusNode focusReferalCode = FocusNode();
 
   bool _obscureTextPassword = true;
   bool _obscureTextConfirmPassword = true;
@@ -42,6 +43,7 @@ class _SignUpState extends State<SignUp> {
   TextEditingController signupFirstNameController = TextEditingController();
   TextEditingController signupMiddleNameController = TextEditingController();
   TextEditingController signupLastNameController = TextEditingController();
+  TextEditingController signupReferalCodeController = TextEditingController();
 
 //registerUser
   Future registerUser() async {
@@ -125,7 +127,7 @@ class _SignUpState extends State<SignUp> {
                             decoration: const InputDecoration(
                               border: InputBorder.none,
                               icon: Icon(
-                                Icons.mail,
+                                Icons.person,
                                 color: Colors.black,
                               ),
                               hintText: 'First Name',
@@ -158,7 +160,7 @@ class _SignUpState extends State<SignUp> {
                             decoration: const InputDecoration(
                               border: InputBorder.none,
                               icon: Icon(
-                                Icons.mail,
+                                Icons.person,
                                 color: Colors.black,
                               ),
                               hintText: 'Middle Name',
@@ -191,10 +193,43 @@ class _SignUpState extends State<SignUp> {
                             decoration: const InputDecoration(
                               border: InputBorder.none,
                               icon: Icon(
-                                Icons.mail,
+                                Icons.person,
                                 color: Colors.black,
                               ),
                               hintText: 'Last Name',
+                              hintStyle: TextStyle(
+                                  fontFamily: 'WorkSansSemiBold',
+                                  fontSize: 16.0),
+                            ),
+                            onSubmitted: (_) {
+                              focusReferalCode.requestFocus();
+                            },
+                          ),
+                        ),
+                        Container(
+                          width: 250.0,
+                          height: 1.0,
+                          color: Colors.grey[400],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 20.0, bottom: 20.0, left: 25.0, right: 25.0),
+                          child: TextField(
+                            focusNode: focusReferalCode,
+                            controller: signupReferalCodeController,
+                            keyboardType: TextInputType.emailAddress,
+                            autocorrect: false,
+                            style: const TextStyle(
+                                fontFamily: 'WorkSansSemiBold',
+                                fontSize: 16.0,
+                                color: Colors.black),
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              icon: Icon(
+                                Icons.person,
+                                color: Colors.black,
+                              ),
+                              hintText: 'Referal Code',
                               hintStyle: TextStyle(
                                   fontFamily: 'WorkSansSemiBold',
                                   fontSize: 16.0),
@@ -224,7 +259,7 @@ class _SignUpState extends State<SignUp> {
                             decoration: const InputDecoration(
                               border: InputBorder.none,
                               icon: Icon(
-                                Icons.mail,
+                                Icons.attach_money,
                                 color: Colors.black,
                               ),
                               hintText: 'Email Address',
@@ -278,44 +313,51 @@ class _SignUpState extends State<SignUp> {
                             onSubmitted: (_) {},
                           ),
                         ),
+                        Container(
+                          width: 250.0,
+                          height: 1.0,
+                          color: Colors.grey[400],
+                        ),
+                        Container(
+                          margin:
+                              const EdgeInsets.only(top: 20.0, bottom: 20.0),
+                          decoration: const BoxDecoration(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(35.0)),
+                            boxShadow: <BoxShadow>[
+                              BoxShadow(
+                                color: kPrimaryColor,
+                                offset: Offset(1.0, 6.0),
+                              ),
+                              BoxShadow(
+                                color: kPrimaryColor,
+                                offset: Offset(1.0, 6.0),
+                              ),
+                            ],
+                            gradient: LinearGradient(
+                              colors: <Color>[kPrimaryColor, kPrimaryColor],
+                            ),
+                          ),
+                          child: MaterialButton(
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 10.0, horizontal: 42.0),
+                              child: Text(
+                                'SIGN UP',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 25.0,
+                                    fontFamily: 'WorkSansBold'),
+                              ),
+                            ),
+                            onPressed: () => registerUser(),
+                          ),
+                        )
                       ],
                     ),
                   ),
                 ),
               ),
-              Container(
-                margin: const EdgeInsets.only(top: 340.0),
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(35.0)),
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                      color: kPrimaryColor,
-                      offset: Offset(1.0, 6.0),
-                    ),
-                    BoxShadow(
-                      color: kPrimaryColor,
-                      offset: Offset(1.0, 6.0),
-                    ),
-                  ],
-                  gradient: LinearGradient(
-                    colors: <Color>[kPrimaryColor, kPrimaryColor],
-                  ),
-                ),
-                child: MaterialButton(
-                  child: const Padding(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 42.0),
-                    child: Text(
-                      'SIGN UP',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25.0,
-                          fontFamily: 'WorkSansBold'),
-                    ),
-                  ),
-                  onPressed: () => registerUser(),
-                ),
-              )
             ],
           ),
         ],
