@@ -6,9 +6,9 @@ import 'package:car_wash/view/Profile/profile_screen.dart';
 import 'package:car_wash/constants.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(HomeScreen());
 
-class MyApp extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

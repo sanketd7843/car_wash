@@ -90,7 +90,7 @@ class _BodyState extends State<Body> {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return MyApp();
+                      return HomeScreen();
                     },
                   ),
                 );

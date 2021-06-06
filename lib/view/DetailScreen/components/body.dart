@@ -5,16 +5,16 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: MyApp(),
+    home: DetailScreen(),
   ));
 }
 
-class MyApp extends StatefulWidget {
+class DetailScreen extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _DetailScreen createState() => _DetailScreen();
 }
 
-class _MyAppState extends State<MyApp> {
+class _DetailScreen extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
