@@ -1,4 +1,6 @@
 import 'package:car_wash/view/ReferAndEarn/refer_and_earn.dart';
+import 'package:car_wash/view/SelectImageAadhar/SelectImageAadhar.dart';
+import 'package:car_wash/view/Welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'profile_menu.dart';
@@ -14,13 +16,12 @@ class _BodyState extends State<Body> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
+        centerTitle: true,
         backgroundColor: Colors.white,
-        title: new Center(
-            child: new Text(
+        title: new Text(
           "Profile",
-          textAlign: TextAlign.center,
           style: TextStyle(color: Colors.grey.shade700),
-        )),
+        ),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -56,7 +57,16 @@ class _BodyState extends State<Body> {
               ProfileMenu(
                 text: "KYC",
                 icon: "assets/icons/key.png",
-                press: () {},
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return SelectAadahrCard();
+                      },
+                    ),
+                  );
+                },
               ),
               ProfileMenu(
                 text: "Wallet",
@@ -66,7 +76,16 @@ class _BodyState extends State<Body> {
               ProfileMenu(
                 text: "Log Out",
                 icon: "assets/icons/logout.png",
-                press: () {},
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return WelcomeScreen();
+                      },
+                    ),
+                  );
+                },
               ),
             ],
           ),

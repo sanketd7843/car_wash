@@ -2,20 +2,20 @@ import 'dart:io';
 
 import 'package:car_wash/components/rounded_button.dart';
 import 'package:car_wash/constants.dart';
-import 'package:car_wash/view/SelectImagePan/SelectImagePan.dart';
+import 'package:car_wash/view/Profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 void main() {
-  runApp(SelectAadahrCard());
+  runApp(SelectPanCard());
 }
 
-class SelectAadahrCard extends StatefulWidget {
+class SelectPanCard extends StatefulWidget {
   @override
-  _SelectAadahrCard createState() => _SelectAadahrCard();
+  _SelectPanCard createState() => _SelectPanCard();
 }
 
-class _SelectAadahrCard extends State<SelectAadahrCard> {
+class _SelectPanCard extends State<SelectPanCard> {
   File _image;
 
   final picker = ImagePicker();
@@ -26,7 +26,6 @@ class _SelectAadahrCard extends State<SelectAadahrCard> {
     var w = MediaQuery.of(context).size.width;
 
     return MaterialApp(
-      title: 'Flutter ImagePicker Example',
       home: Scaffold(
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -40,7 +39,7 @@ class _SelectAadahrCard extends State<SelectAadahrCard> {
                     ),
                     Center(
                       child: Text(
-                        "Upload Aadhar Card",
+                        "Upload Pan Card",
                         style: TextStyle(
                             color: Colors.grey.shade800,
                             fontSize: 23,
@@ -52,7 +51,7 @@ class _SelectAadahrCard extends State<SelectAadahrCard> {
                     ),
                     Center(
                       child: Text(
-                        "Upload your aadhar card so that \n      we can verify your account",
+                        "Upload your pan card so that \n      we can verify your account",
                         style: TextStyle(
                             color: Colors.grey.shade500,
                             fontSize: 16,
@@ -118,7 +117,7 @@ class _SelectAadahrCard extends State<SelectAadahrCard> {
                   padding: const EdgeInsets.fromLTRB(28.0, 8.0, 28.0, 8.0),
                   // ignore: deprecated_member_use
                   child: RoundedButton(
-                    text: "Upload Aadhar Card",
+                    text: "Upload Pan Card",
                     color: kPrimaryColor,
                     textColor: Colors.white,
                     press: () {
@@ -126,7 +125,7 @@ class _SelectAadahrCard extends State<SelectAadahrCard> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return SelectPanCard();
+                            return ProfileScreen();
                           },
                         ),
                       );

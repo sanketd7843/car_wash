@@ -1,6 +1,9 @@
 import 'package:car_wash/view/HomeScreen/home_screen.dart';
 import 'package:car_wash/view/Login/login_screen.dart';
 import 'package:car_wash/view/SelectAddressScreen/select_address_screen.dart';
+import 'package:car_wash/view/SelectDayDateScreen/main.dart';
+import 'package:car_wash/view/SelectImageAadhar/SelectImageAadhar.dart';
+import 'package:car_wash/view/SignupSignin/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:car_wash/view/Signup/signup_screen.dart';
 import 'package:car_wash/view/Welcome/components/background.dart';
@@ -39,7 +42,7 @@ class Body extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return LoginScreen();
+                      return SelectAadahrCard();
                     },
                   ),
                 );

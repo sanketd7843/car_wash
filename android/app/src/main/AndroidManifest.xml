@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.car_wash">
    <application
-        android:label="M.I. Carwa"
+       android:requestLegacyExternalStorage="true"
+       android:label="M.I. Carwa"
        android:usesCleartextTraffic="true"
        android:icon="@mipmap/ic_launcher">
         <activity
